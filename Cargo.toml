@@ -1,0 +1,7 @@
+[package]
+name = "pig-latin-bot"
+version = "0.1.0"
+authors = ["Capital EX <xcapt98@gmail.com>"]
+
+[dependencies]
+serenity = "0.3"
