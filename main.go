@@ -51,13 +51,13 @@ func respond(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	if strings.HasPrefix(m.Content, "!pig-latin") {
 		fmt.Println("Message: ", m.Content)
-		s.ChannelMessageSend(m.ChannelID, pigLatin(m.Content))
+		s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("@%s %s", m.Author, pigLatin(m.Content)))
 	}
 
 }
 
 func pigLatin(s string) string {
-	var runes = []rune(strings.ToLower(s))
+	var runes = []rune(strings.TrimLeft(strings.ToLower(s), "!pig-latin"))
 	var head rune
 	var pig []rune
 
