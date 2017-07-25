@@ -85,5 +85,13 @@ func pigLatin(s string) string {
 		}
 	}
 
+	switch head {
+	case 'a', 'e', 'i', 'o', 'u':
+		pig = append(pig, 'w', 'a', 'y')
+	case 0:
+	default:
+		pig = append(pig, head, 'a', 'y')
+	}
+
 	return string(pig)
 }
