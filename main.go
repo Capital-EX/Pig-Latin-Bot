@@ -51,7 +51,7 @@ func respond(s *discordgo.Session, m *discordgo.MessageCreate) {
 	}
 	if strings.HasPrefix(m.Content, "!pig-latin") {
 		fmt.Println("Message: ", m.Content)
-		s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> %s", m.Author, pigLatin(m.Content)))
+		s.ChannelMessageSend(m.ChannelID, fmt.Sprintf("<@%s> %s", m.Author.ID, pigLatin(m.Content)))
 	}
 
 }
